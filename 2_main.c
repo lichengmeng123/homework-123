@@ -3,30 +3,23 @@
 //李澄萌
 #include <stdio.h>
 int main(){
-    int a,b;
-    double result;
-    char c;//存储运算符（+，—，*，/）
-    printf("请输入运算两个整数和一个运算符(格式:a b 运算符）:");
-    scanf("%d %d %c",&a,&b,&c);
-    switch (c){
-        case'+':
-        printf("%d\n",a + b);
-        break;
-        case'-':
-        printf("%d\n",a - b);
-        break;
-        case'*':
-        printf("%d\n",a * b);
-        break;
-        case'/':
-        if(b==0)
-        printf("除数不能是零\n");
-        else
-        printf("%d\n",a / b);
-        break;
-    default:
-         printf("输入有误！\n");
+    int score;
+    printf("请输入学生的整数成绩（0-100）");
+    scanf("%d",&score);  
+
+    if(score>=80 && score<=100)
+    {
+        printf("A");
+    }else if (score>=80 && score <=89){
+        printf("B");
+    }else if (score>=70 && score <=79){
+        printf("C");
+    }else if (score>=60 && score <=69){
+        printf("D");
+    }else if (score>=0 && score<60){
+        printf("E");
     }
 
     return 0;
+
 }
