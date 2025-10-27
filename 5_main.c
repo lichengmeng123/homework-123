@@ -4,24 +4,22 @@
 #include <stdio.h>
  int main()
  {
-    int num = 100,digit1,digit2,digit3;
-    int count = 0;
-    while(num<=999)
-    {
-        digit1 = num / 100;
-        digit2 = (num / 10)%10;
-        digit3 = num % 10;
-        if(digit1*digit1*digit1+digit2*digit2*digit2+digit3*digit3*digit3 == num)
-        {
-            if(count > 0)
-            {
-            printf(" ");
-            }
-            printf("%d",num); 
-            count++;
+     int arr[5]; 
+     int i, sum = 0;
+     printf("请输入数组前四位：");
+     for (i = 0; i < 4; i++)
+      {
+         scanf("%d", &arr[i]);
+         sum += arr[i];
         }
-        num++;
-    }
-    printf("\n");
-    return 0;
+     arr[4] = sum; 
+     for (i = 0; i < 5; i++)
+      {
+         if (i > 0) {
+             printf(" ");
+         }
+         printf("%d", arr[i]);
+     }
+     printf("\n");
+     return 0;
  }
