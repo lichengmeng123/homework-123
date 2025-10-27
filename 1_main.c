@@ -3,7 +3,7 @@
 //李澄萌
 #include <stdio.h>
  int main()
- {
+{
      int n, i, is_prime = 1; 
      printf("请输入小于50的正整数密钥：");
      scanf("%d", &n);
