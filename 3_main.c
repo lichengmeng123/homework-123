@@ -2,32 +2,29 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
-
-int main(){
-    int a,b;
-    double result;
-    char c;//存储运算符（+，—，*，/）
-    printf("请输入运算两个整数和一个运算符(格式:a b 运算符）:");
-    scanf("%d %d %c",&a,&b,&c);
-    switch (c){
-        case'+':
-        printf("%d\n",a + b);
-        break;
-        case'-':
-        printf("%d\n",a - b);
-        break;
-        case'*':
-        printf("%d\n",a * b);
-        break;
-        case'/':
-        if(b==0)
-        printf("除数不能是零\n");
-        else
-        printf("%d\n",a / b);
-        break;
-    default:
-         printf("输入有误！\n");
-    }
-
-    return 0;
-}
+ int main()
+ {
+     int n, i = 2, is_prime = 1; 
+     printf("请输入小于50的正整数密钥：");
+     scanf("%d", &n);
+     while(i < n) 
+     {
+         if (n % i == 0) 
+         {
+             is_prime = 0;
+             break; 
+         }
+         i++;
+     }
+     if (n == 1)
+      {
+         printf("密钥不安全，请重新输入\n");
+     } else if (is_prime == 1) 
+     {
+         printf("密钥安全，密码设置成功\n");
+     } else
+      {
+         printf("密钥不安全，请重新输入\n");
+     }
+     return 0;
+ }
