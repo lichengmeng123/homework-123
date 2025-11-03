@@ -2,24 +2,18 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
- int main()
- {
-     int arr[5]; 
-     int i, sum = 0;
-     printf("请输入数组前四位：");
-     for (i = 0; i < 4; i++)
-      {
-         scanf("%d", &arr[i]);
-         sum += arr[i];
-        }
-     arr[4] = sum; 
-     for (i = 0; i < 5; i++)
-      {
-         if (i > 0) {
-             printf(" ");
-         }
-         printf("%d", arr[i]);
-     }
-     printf("\n");
-     return 0;
- }
+long long calculateArithmeticSum(int a1, int an, int step) {
+    if (step == 0) {
+        return 0;
+    }
+    int n = ((an - a1) / step) + 1;
+    return (long long)n * (a1 + an) / 2;
+}
+
+int main() {
+    long long total = calculateArithmeticSum(1, 100, 1);
+    
+    printf("%lld\n", total);
+
+    return 0;
+}
