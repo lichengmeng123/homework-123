@@ -2,29 +2,38 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
- int main()
+
+void bubbleSort(int arr[], int n) 
+{
+    for (int i = 0; i < n - 1; i++) 
+    {
+        for (int j = 0; j < n - 1 - i; j++) 
+        {
+            if (arr[j] > arr[j + 1]) 
+            {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main()
  {
-     int n, i = 2, is_prime = 1; 
-     printf("请输入小于50的正整数密钥：");
-     scanf("%d", &n);
-     while(i < n) 
-     {
-         if (n % i == 0) 
-         {
-             is_prime = 0;
-             break; 
-         }
-         i++;
-     }
-     if (n == 1)
-      {
-         printf("密钥不安全，请重新输入\n");
-     } else if (is_prime == 1) 
-     {
-         printf("密钥安全，密码设置成功\n");
-     } else
-      {
-         printf("密钥不安全，请重新输入\n");
-     }
-     return 0;
- }
+    int numbers[10];
+
+    for (int i = 0; i < 10; i++) 
+    {
+        scanf("%d", &numbers[i]);
+    }
+    bubbleSort(numbers, 10);
+
+    for (int i = 0; i < 10; i++) 
+    {
+        printf("%d ", numbers[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
