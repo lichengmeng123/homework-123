@@ -2,26 +2,26 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
- int main()
- {
-    int num,digit1,digit2,digit3;
-    int count = 0;
-    for(num=100;num<=999;num++)
-    {
-        digit1 = num / 100;
-        digit2 = (num / 10)%10;
-        digit3 = num % 10;
-        if(digit1*digit1*digit1+digit2*digit2*digit2+digit3*digit3*digit3 == num)
-        {
-            if(count > 0)
-            {
-            printf(" ");
-            }
-            printf("%d",num); 
-            count++;
+int main() 
+{
+    int matrix[3][3];
+    int transposed[3][3];
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &matrix[i][j]);
         }
     }
-    printf("\n");
-    return 0;
- }
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            transposed[j][i] = matrix[i][j];
+        }
+    }
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", transposed[i][j]);
+        }
+        printf("\n");
+    }
 
+    return 0;
+}
