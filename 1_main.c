@@ -2,7 +2,8 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
-int main() {
+int main()
+{
     int matrix[3][3];
 
     for (int i = 0; i < 3; i++) {
