@@ -2,26 +2,22 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
- int main()
- {
-    int num = 100,digit1,digit2,digit3;
-    int count = 0;
-    while(num<=999)
-    {
-        digit1 = num / 100;
-        digit2 = (num / 10)%10;
-        digit3 = num % 10;
-        if(digit1*digit1*digit1+digit2*digit2*digit2+digit3*digit3*digit3 == num)
-        {
-            if(count > 0)
-            {
-            printf(" ");
-            }
-            printf("%d",num); 
-            count++;
-        }
-        num++;
+long long power(int base, int exponent) {
+    long long result = 1;
+    for (int i = 0; i < exponent; i++) {
+        result *= base;
     }
-    printf("\n");
+    return result;
+}
+
+int main() {
+    long long sum = 0;
+
+    for (int i = 1; i <= 5; i++) {
+        sum += power(i, 2);
+    }
+
+    printf("%lld\n", sum);
+
     return 0;
- }
+}
