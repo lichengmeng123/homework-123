@@ -2,18 +2,23 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
-long long calculateArithmeticSum(int a1, int an, int step) {
-    if (step == 0) {
-        return 0;
+
+void shiftBack(int *ptr_arr, int len) {
+    for (int i = len - 1; i > 0; i--) {
+        *(ptr_arr + i) = *(ptr_arr + i - 1);
     }
-    int n = ((an - a1) / step) + 1;
-    return (long long)n * (a1 + an) / 2;
+    *ptr_arr = 0; 
 }
 
 int main() {
-    long long total = calculateArithmeticSum(1, 100, 1);
-    
-    printf("%lld\n", total);
-
+    int arr[5];
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }
+    shiftBack(arr, 5);
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
     return 0;
 }
