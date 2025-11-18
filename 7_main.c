@@ -2,29 +2,28 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
-void reverseArray(int arr[], int length) {
-    for (int i = 0; i < length / 2; i++) {
-        int temp = arr[i];
-        arr[i] = arr[length - 1 - i];
-        arr[length - 1 - i] = temp;
+
+void bubbleSort(int *ptr, int len) {
+    for (int i = 0; i < len - 1; i++) { 
+        for (int j = 0; j < len - 1 - i; j++) { 
+            if (*(ptr + j) > *(ptr + j + 1)) { 
+                int temp = *(ptr + j);
+                *(ptr + j) = *(ptr + j + 1);
+                *(ptr + j + 1) = temp;
+            }
+        }
     }
 }
 
 int main() {
-    int arr[5];
-    for (int i = 0; i < 5; i++) {
+    int arr[10];
+    for (int i = 0; i < 10; i++) {
         scanf("%d", &arr[i]);
     }
-    reverseArray(arr, 5);
-
-    for (int i = 0; i < 5; i++) {
-        if (i == 4) {
-            printf("%d", arr[i]);
-        } else {
-            printf("%d ", arr[i]);
-        }
+    bubbleSort(arr, 10);
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
     }
     printf("\n");
-
     return 0;
 }
