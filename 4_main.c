@@ -2,22 +2,22 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
-long long power(int base, int exponent) {
-    long long result = 1;
-    for (int i = 0; i < exponent; i++) {
-        result *= base;
+
+void incrementArr(int *ptr, int len) {
+    for (int i = 0; i < len; i++) {
+        *(ptr + i) += 1; 
     }
-    return result;
 }
 
 int main() {
-    long long sum = 0;
-
-    for (int i = 1; i <= 5; i++) {
-        sum += power(i, 2);
+    int arr[5];
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
     }
-
-    printf("%lld\n", sum);
-
+    incrementArr(arr, 5); 
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
     return 0;
 }
