@@ -2,34 +2,19 @@
 //2892862386@qq.com
 //李澄萌
 #include <stdio.h>
-long long calculateSum(int arr[], int length) {
-    long long sum = 0;
-    for (int i = 0; i < length; i++) {
-        sum += arr[i];
-    }
-    return sum;
-}
-
-long long calculateProduct(int arr[], int length) {
-    long long product = 1;
-    for (int i = 0; i < length; i++) {
-        product *= arr[i];
-    }
-    return product;
-}
+#include <stdlib.h>
 
 int main() {
-    int arr[5];
-
+    int *ptr = (int *)malloc(5 * sizeof(int));
     for (int i = 0; i < 5; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", ptr + i); 
     }
-
-    long long sum = calculateSum(arr, 5);
-    long long product = calculateProduct(arr, 5);
-
-    printf("%lld %lld\n", sum, product);
-
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *(ptr + i));
+    }
+    printf("\n");
+    free(ptr); 
+    ptr = NULL; 
     return 0;
 }
 
